@@ -1,0 +1,65 @@
+Shell-SQP
+
+SQP is a rapid SQL prototyping shell.  It's meant to provide a power
+shell for SQLite3 and Perl by means of which you can quickly explore
+different data organization and manipulation techniques as you learn
+about a given domain.
+
+It can be used as the basis for subclassed power tools, but it's
+probably not your best bet for something an end user should be given.
+
+A SQP setup consists of:
+ - An SQLite3 database defined with high-level commands
+ - Arbitrary .pm files defining local packages extending
+   the ORM and/or the CLI
+ - Arbitrary .pl files defining commands accessible from the CLI
+
+The SQL select,insert,update,delete commands are exposed in the CLI;
+select commands return a pretty-printed result.  Update and delete
+commands ask for confirmation if you forget the "where" clause (I
+shoot myself in the foot with that regularly).
+
+More functionality to come; I'm using this as the basis for my 
+job management system as a character-building exercise.
+
+INSTALLATION
+
+To install this module, run the following commands:
+
+	perl Makefile.PL
+	make
+	make test
+	make install
+
+SUPPORT AND DOCUMENTATION
+
+After installing, you can find documentation for this module with the
+perldoc command.
+
+    perldoc Shell::SQP
+
+You can also look for information at:
+
+    RT, CPAN's request tracker (report bugs here)
+        http://rt.cpan.org/NoAuth/Bugs.html?Dist=Shell-SQP
+
+    AnnoCPAN, Annotated CPAN documentation
+        http://annocpan.org/dist/Shell-SQP
+
+    CPAN Ratings
+        http://cpanratings.perl.org/d/Shell-SQP
+
+    Search CPAN
+        http://search.cpan.org/dist/Shell-SQP/
+
+
+LICENSE AND COPYRIGHT
+
+Copyright (C) 2012 Michael Roberts
+
+This program is free software; you can redistribute it and/or modify it
+under the terms of either: the GNU General Public License as published
+by the Free Software Foundation; or the Artistic License.
+
+See http://dev.perl.org/licenses/ for more information.
+

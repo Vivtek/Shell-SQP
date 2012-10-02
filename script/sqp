@@ -1,0 +1,10 @@
+#!/usr/bin/perl
+
+use strict;
+use warnings;
+
+use Shell::SQP;
+
+my $shell = Shell::SQP->new();
+
+$shell->run(@ARGV);
