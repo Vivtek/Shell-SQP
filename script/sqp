@@ -4,7 +4,48 @@ use strict;
 use warnings;
 
 use Shell::SQP;
+use Getopt::Euclid;
 
-my $shell = Shell::SQP->new();
+my $shell = Shell::SQP->new(appdir => $ARGV{'-app'}, 
+	                        dbname => $ARGV{'-db'}
+	                       );
 
-$shell->run(@ARGV);
+$shell->run(@{$ARGV{'<args>'}});
+
+=head1 NAME
+ 
+sqp - start a SQP prototyping session
+ 
+=head1 VERSION
+ 
+Version 0.01
+ 
+=head1 OPTIONS
+ 
+=over
+ 
+=item -a[pp] <appdir>
+ 
+Specify an app directory that will be used to source standard commands and settings.
+
+=item -db <dbname>
+
+Specify the name of the database to use in the local directory. If this isn't specified,
+SQP will use the first one it finds in alphanumeric order, or default to 'sqp.sqlt'.
+
+=item <args>...
+
+Specify a command to be carried out as soon as the session is built.
+
+=back
+
+=head1 AUTHOR
+ 
+Michael Roberts (michael@vivtek.com)
+ 
+=head1 DESCRIPTION
+ 
+B<sqp> starts a command-line session based on SQP, a quick and dirty database prototyping
+tool.
+ 
+=cut
